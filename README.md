@@ -79,16 +79,25 @@ Each model was integrated with a pipeline:
 
 ## 🚀 How to Use
 
-### 1️⃣ Clone the repository:
+###  Clone the repository:
 ```bash
 git clone https://github.com/yourusername/diabetes-prediction-ml.git
+
+```
+```bash
 cd diabetes-prediction-ml
 
-
-
+```
 ### Prerequisites
 You can install all dependencies via pip:
+```bash
 pip install pandas numpy seaborn matplotlib scikit-learn imbalanced-learn
+```
+### Run the notebook:
+Use Jupyter to open and run the .ipynb file.
+```bash
+jupyter notebook Diabetes_Prediction.ipynb
+```
 
 
 
