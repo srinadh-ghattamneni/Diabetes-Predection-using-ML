@@ -1,39 +1,94 @@
-# Diabetes Prediction using Machine Learning
+# 🩺 Diabetes Prediction using Machine Learning
 
-## Introduction
-This project focuses on developing a robust machine learning model to accurately predict diabetes using a diverse dataset collected from medical centers in Iraq. Given the global rise in diabetes cases, this project aims to aid in early diagnosis and effective management of the disease.
+## 📌 Introduction
+This project aims to develop a robust machine learning pipeline to predict diabetes status accurately using medical and laboratory data collected from hospitals in Iraq. With the growing concern over diabetes worldwide, early detection using data-driven approaches can significantly improve patient outcomes.
 
-## Dataset
-The dataset, sourced from Medical City Hospital and Al-Kindy Teaching Hospital, includes medical and laboratory information from 1000 patients. Key features include blood sugar levels, age, gender, BMI, cholesterol levels, and the diabetes status of patients (Diabetic, Non-Diabetic, or Predicted-Diabetic).
+---
+## 📊 Dataset Overview
 
-## Methodology
-### Data Preprocessing:
-- Encoding categorical variables.
-- Addressing class imbalance using SMOTE and Random Under-sampling.
-- Normalizing features using StandardScaler and MinMaxScaler.
+SOURCE: https://data.mendeley.com/datasets/wj9rwkp9c2/1
 
-### Model Building:
-- Classification algorithms used: Random Forest, Decision Tree, K-Nearest Neighbors (KNN), and Support Vector Machine (SVC).
-- Hyperparameter tuning conducted with GridSearchCV.
+The dataset includes information from **1,000 patients**, sourced from:
+- **Medical City Hospital**
+- **Al-Kindy Teaching Hospital**, Iraq
 
-### Evaluation:
-- Models assessed on accuracy, precision, recall, and F1-score.
-- Confusion matrices used for detailed insights.
+### 🔑 Key Features:
+- Age: Age 
+- Gender: Gender 
+- Body Mass Index (BMI): Body Mass Index
+- Urea: Urea (no abbreviation)
+- Cr: Creatinine
+- HbA1c: Hemoglobin A1c
+- Chol: Cholesterol
+- TG: Triglycerides
+- HDL: High-Density Lipoprotein
+- LDL: Low-Density Lipoprotein
+- VLDL: Very Low-Density Lipoprotein
 
-## Results
-The Random Forest classifier demonstrated the best performance with an accuracy of 98.6%.
+- Diabetes status:  
+  - `Non-Diabetic`,  
+  - `Predicted-Diabetic`,  
+  - `Diabetic`
 
-## Conclusion
-This project underscores the potential of machine learning in aiding early diagnosis and treatment of diabetes, offering valuable insights into the effectiveness of different algorithms.
+---
 
-## How to Use
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/diabetes-prediction-ml.git
+## ⚙️ Methodology
+
+### 🔄 Data Preprocessing
+- Removal of irrelevant or noisy features
+- Categorical encoding using `LabelEncoder`
+- Missing value inspection and cleanup
+- Feature normalization using `StandardScaler`
+- Handling class imbalance using:
+  - `SMOTENC` (SMOTE for mixed categorical/numeric data)
+
+### 🧠 Model Building
+Four classification algorithms were implemented:
+- 🌲 Random Forest
+- 🌿 Decision Tree *(Optional - if added later)*
+- 📍 K-Nearest Neighbors (KNN)
+- 🌀 Support Vector Machine (SVM)
+
+Each model was integrated with a pipeline:
+- Scaling → Resampling → Classification
+- Hyperparameter tuning using `GridSearchCV` with 5-fold cross-validation
+- Class balancing using `class_weight='balanced'` and SMOTENC
+
+### 📈 Evaluation Metrics
+- Accuracy
+- F1-score (Macro-averaged)
+- ROC AUC Score (Macro-averaged)
+- Confusion Matrix
+- ROC Curve
+- Learning Curve (Training vs Validation scores)
+
+---
+
+## ✅ Results
+
+| Model                  | Accuracy | F1-Score (Macro) | 
+|------------------------|----------|------------------|
+| Random Forest          | 98.5     | 95.5             | 
+| Logistic Regression    | 92.5     | 76.8             |  
+| K-Nearest Neighbors    | 95.5     | 85.9             |  
+| Support Vector Machine | 95.5     | 84.3             |  
+
+📝 Detailed evaluation reports and ROC curves are available in the Jupyter notebook.
+
+---
+
+## 🚀 How to Use
+
+### 1️⃣ Clone the repository:
+```bash
+git clone https://github.com/yourusername/diabetes-prediction-ml.git
+cd diabetes-prediction-ml
+
+
+
 ### Prerequisites
-- Python 3.x
-- Jupyter Notebook
-- Libraries: pandas, numpy, seaborn, matplotlib, scikit-learn, imbalanced-learn
+You can install all dependencies via pip:
+pip install pandas numpy seaborn matplotlib scikit-learn imbalanced-learn
 
 
 
@@ -44,4 +99,4 @@ This project underscores the potential of machine learning in aiding early diagn
 -For any inquiries, please reach out to srinadhghattamneni1990@gmail.com.
 
 ## Fork and Contribute
-- If you find this project interesting or useful, please fork the repository and star it. Contributions are welcome! Feel free to open an issue or submit a pull request for any improvements or bug fixes.   rewrite code for md file
+- If you find this project interesting or useful, please fork the repository and star it. Contributions are welcome! Feel free to open an issue or submit a pull request for any improvements or bug fixes.  
